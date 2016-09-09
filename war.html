@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script>
+  var startPosition = 66;
+  var leftCenter = 0;
+
+  $(function() {
+    $('#war-video')[0].currentTime = startPosition;
+
+    leftCenter = $(document.body).width() / 2 - $('#strip-1 img').width() / 2;
+
+    window.requestAnimationFrame(scrollPlay);
+  });
+
+  function scrollPlay() {
+    videoPosition = document.scrollingElement.scrollTop / 100;
+
+    stripPosition = leftCenter; // + wobble(document.scrollingElement.scrollTop/5, 200);
+
+    $('#war-video')[0].currentTime = startPosition + videoPosition;
+    $('#strip-1').css({left: stripPosition + 'px'});
+    window.requestAnimationFrame(scrollPlay);
+  }
+
+  function wobble(unit, quadrantSize) {
+    quadrant = parseInt(unit / quadrantSize);
+    direction = (quadrant % 2) * 2 - 1;
+
+    return direction < 0 ? (unit % quadrantSize) : (quadrantSize - unit%quadrantSize);
+  }
+
+  function debounce(func, wait, immediate) {
+  	var timeout;
+  	return function() {
+  		var context = this, args = arguments;
+  		var later = function() {
+  			timeout = null;
+  			if (!immediate) func.apply(context, args);
+  		};
+  		var callNow = immediate && !timeout;
+  		clearTimeout(timeout);
+  		timeout = setTimeout(later, wait);
+  		if (callNow) func.apply(context, args);
+  	};
+  };
+</script>
+
+<body style="margin:0; padding:0">
+  <div id="background-video" style="position: fixed;left:0px;top: 0px;opacity: 0.3;">
+    <video id="war-video" src="https://15-lvl3-pdl.vimeocdn.com/01/3547/2/67739294/169232062.mp4?expires=1473465162&token=0bd6ca6ad33e121009d5e"
+      style="height: 807px;" muted></video>
+  </div>
+
+  <div id="strip-1" style="position: relative; left: 100px;">
+    <img src="http://positivenegatives.org/wp-content/uploads/2015/03/vanni_19.jpg" style="width:800px;"/>
+    <img src="http://positivenegatives.org/wp-content/uploads/2015/03/vanni_20.jpg" style="width:800px;"/>
+    <img src="http://positivenegatives.org/wp-content/uploads/2015/03/vanni_21.jpg" style="width:800px;"/>
+  </div>
+</body>
+</html>

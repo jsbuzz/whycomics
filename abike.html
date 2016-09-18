@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base target="_blank">
+</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<style type="text/css">
+    body {
+        background-color: #000;
+    }
+
+    .container {
+        margin: 20px;
+    }
+
+    .container .static-comic {
+        margin: 20px;
+        position: relative;
+    }
+
+    .container .static-comic img {
+        width: 100%;
+    }
+
+    .container .static-comic .overlay-container {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    .container .static-comic .overlay-container
+    .icon {
+        display: block;
+        width: 10%;
+        position: absolute;
+        top: 1%;
+        right: -11%;
+    }
+
+    .link-box {
+        position: absolute;
+        text-decoration: none;
+    }
+    .link-box a {
+        display: block;
+        position: relative;
+        margin: auto;
+        top: 0;
+        left: 0;
+        width: 0%;
+        height: 100%;
+        border-bottom: 2px dashed #999;
+    }
+
+    .link-box .description {
+        position: relative;
+        margin: 0;
+        padding: 10px;
+        background-color: #333;
+        color: white;
+        font-size: 14px;
+        font-family: fantasy;
+        border-radius: 0 0 6px 6px;
+    }
+
+
+    #what-story {
+        left: 2.7%;
+        top: 19.2%;
+        width: 34.3%;
+        height: 3.5%;
+        transform: rotate(-2deg);
+    }
+
+
+    #sob-story {
+        left: 52.7%;
+        top: 18%;
+        width: 29%;
+        height: 3%;
+        transform: rotate(1deg);
+    }
+
+</style>
+<script>
+  $(function() {
+
+      $('.icon').hide();
+      $('.description').hide();
+
+      $('.link-box').hover(
+          debounce(function() {
+              var linkBox = this;
+              $('a', linkBox).animate({width: '100%'}, function() {
+                    $('img', linkBox).fadeIn();
+                    $('.description', linkBox).slideDown(100);
+              });
+          }, 800, true),
+          debounce(function() {
+              var linkBox = this;
+              $('img', linkBox).fadeOut();
+              $('.description', linkBox).slideUp(100, function() {
+                  $('a', linkBox).animate({width: '0%'});
+              });
+          }, 800, true)
+      );
+
+      $(document).scroll(debounce(function() {
+          $('.icon').fadeIn(200, function() {
+              $('.icon').fadeOut(200);
+          });
+      }, 600))
+
+
+  });
+
+  function debounce(func, wait, immediate) {
+	var timeout;
+	return function() {
+		var context = this, args = arguments;
+		var later = function() {
+			timeout = null;
+			if (!immediate) func.apply(context, args);
+		};
+		var callNow = immediate && !timeout;
+		clearTimeout(timeout);
+		timeout = setTimeout(later, wait);
+		if (callNow) func.apply(context, args);
+	   };
+    };
+</script>
+
+<body>
+<div class="container">
+    <div id="comic-strip-1" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A00.jpg" />
+    </div>
+    <div id="comic-strip-2" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A01.jpeg" />
+        <div class="overlay-container">
+            <div class="link-box" id="sob-story">
+                <a href="http://www.theguardian.com/global-development/series/modern-day-slavery-in-focus+law/human-trafficking"></a>
+                <img class="icon" src="icons/book.png"/>
+                <p class="description">Read about Human Trafficking and Modern Day Slavery in the Guardian</p>
+            </div>
+            <div class="link-box" id="what-story">
+                <a href="http://www.bbc.com/news/magazine-35244148"></a>
+                <img class="icon" src="icons/video.png"/>
+                <p class="description"><iframe style="width:99%; margin: auto" src="https://www.youtube.com/embed/UrX_GJ7WrHY" frameborder="0" allowfullscreen></iframe></p>
+            </div>
+        </div>
+    </div>
+    <div id="comic-strip-3" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A02.jpeg" />
+    </div>
+    <div id="comic-strip-4" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A03.jpeg" />
+    </div>
+    <div id="comic-strip-5" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A04.jpeg" />
+    </div>
+    <div id="comic-strip-6" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A05.jpeg" />
+    </div>
+    <div id="comic-strip-7" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A06.jpeg" />
+    </div>
+    <div id="comic-strip-8" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A07.jpeg" />
+    </div>
+    <div id="comic-strip-9" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A08.jpeg" />
+    </div>
+    <div id="comic-strip-10" class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A09.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A10.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A11.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/a12.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A13.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A14.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A15.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A17.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A18.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A20.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A21.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A22.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A23.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A24.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A25.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A26.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A27.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A28.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A29.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A30.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A31.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A32.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A33.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A34.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A35.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A36.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A37.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A38.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A39.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A40.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A41.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A42.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A43.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A44.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A45.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A46.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A47.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A48.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A49.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A50.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A51.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A52.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A53.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A54.jpeg" />
+    </div>
+    <div class="static-comic">
+        <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A55.jpeg" />
+    </div>
+</div>
+
+</body>
+</html>

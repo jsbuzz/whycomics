@@ -37,10 +37,10 @@ $(function() {
         });
     }, 600))
 
-    // frame 5
     $(document).scroll(function() {
+        // frame 5
         var leftStart = 0, rightStart = 60.6,
-            scrollStart = $('#comic-strip-5').position().top,
+            scrollStart = $('#comic-strip-5').position().top - $('#comic-strip-5').height()/2,
             scrollTop = document.scrollingElement.scrollTop;
 
         if(scrollTop > scrollStart && scrollTop < scrollStart + 1000) {
@@ -53,6 +53,16 @@ $(function() {
             $('#family-right').css({
                 left : (rightStart+unit)+'%',
                 opacity : (100 - unit*2)/100
+            });
+        }
+
+        // frame 4
+        scrollStart = $('#comic-strip-4').position().top - $('#comic-strip-5').height()/4;
+        if(scrollTop > scrollStart && scrollTop < scrollStart + 1000) {
+            var unit = (scrollTop - scrollStart) / 15;
+
+            $('#little-mouse').css({
+                transform : 'scale(' + (100 - unit)/100 + ')'
             });
         }
     });

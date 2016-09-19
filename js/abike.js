@@ -1,5 +1,5 @@
 function hideAll() {
-    $('.icon').hide();
+    $('.icon, .icon-bg').hide();
     $('.description').hide();
 }
 
@@ -10,17 +10,21 @@ $(function() {
   $(document).click(hideAll);
 
   $('.link-box').each(function() {
-    $(this)
+
+    $(this) //...
+
     .mouseenter(debounce(function() {
         var linkBox = this;
+        //$('img', linkBox).stop().fadeIn();
+        $('.icon, .icon-bg', linkBox).stop().fadeIn();
         $('a', linkBox).stop().animate({width: '100%'}, function() {
-            $('img', linkBox).fadeIn();
             $('.description', linkBox).stop().slideDown(100);
         });
     }, 800, true))
+
     .mouseleave(function() {
         var linkBox = this;
-        $('img', linkBox).fadeOut();
+        $('.icon, .icon-bg', linkBox).stop().fadeOut();
         $('.description', linkBox).stop().slideUp(100, function() {
             $('a', linkBox).stop().animate({width: '0%'});
         });

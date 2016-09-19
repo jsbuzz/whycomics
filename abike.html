@@ -36,6 +36,30 @@
         transform: rotate(-2deg);
     }
 
+    #family-left {
+        background-image: url('http://positivenegatives.org/wp-content/uploads/2015/08/A04.jpeg');
+        background-position: 0 0;
+        left: 0%;
+    }
+
+    #family-right {
+        background-image: url('http://positivenegatives.org/wp-content/uploads/2015/08/A04.jpeg');
+        background-position: 101% 0%;
+        left: 60.6%;
+        top: 0%;
+    }
+
+    #family-left-cover {
+        background-color: white;
+        left: 0%;
+        top: 0%;
+    }
+
+    #family-right-cover {
+        background-color: white;
+        left: 60.6%;
+        top: 0%;
+    }
 </style>
 
 <body>
@@ -81,6 +105,12 @@
     </div>
     <div id="comic-strip-5" class="static-comic">
         <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A04.jpeg" />
+        <div class="overlay-container">
+            <div class="cutout" id="family-left-cover"></div>
+            <div class="cutout" id="family-right-cover"></div>
+            <div class="cutout" id="family-left"></div>
+            <div class="cutout" id="family-right"></div>
+        </div>
     </div>
     <div id="comic-strip-6" class="static-comic">
         <img src="http://positivenegatives.org/wp-content/uploads/2015/08/A05.jpeg" />

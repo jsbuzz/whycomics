@@ -57,7 +57,7 @@ $(function() {
         }
 
         // frame 4
-        scrollStart = $('#comic-strip-4').position().top - $('#comic-strip-5').height()/4;
+        scrollStart = $('#comic-strip-4').position().top - $('#comic-strip-5').height()/2;
         if(scrollTop > scrollStart && scrollTop < scrollStart + 1000) {
             var unit = (scrollTop - scrollStart) / 15;
 

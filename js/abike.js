@@ -65,6 +65,17 @@ $(function() {
                 transform : 'scale(' + (100 - unit)/100 + ')'
             });
         }
+
+
+        // frame 12
+        scrollStart = $('#comic-strip-12').position().top - $('#comic-strip-12').height()/1.5;
+        if(scrollTop > scrollStart && scrollTop < scrollStart + 3000) {
+            var unit = (scrollTop - scrollStart) / 13;
+
+            $('#proposal').css({
+                left: (Math.min(unit - 51, 0))+'%'
+            });
+        }
     });
 
     // cutout background resizing

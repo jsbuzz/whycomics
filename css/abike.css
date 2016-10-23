@@ -86,3 +86,32 @@ body {
     width: 40%;
     height: 75%;
 }
+
+.icon-container {
+    position: absolute;
+    top: 40%;
+    left: 0;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.icon-container .floating-icon {
+    position: relative;
+    left: -36px;
+    background-image: url('../icons/video.png');
+    background-size: 64px;
+    border: 1px dashed #333;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.icon-container .floating-icon:hover {
+    left: -6px;
+}
+
+.floating-icon.icon-book {
+    background-image: url('../icons/book.png');
+}

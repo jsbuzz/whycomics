@@ -1,0 +1,67 @@
+[
+    {
+        "url" : "http://positivenegatives.org/wp-content/uploads/2015/08/A00.jpg",
+        "elements" : [
+            {
+                "type" : "link-box",
+                "href" : "http://www.theguardian.com/global-development/series/modern-day-slavery-in-focus+law/human-trafficking",
+                "icon" : "icons/book.png",
+                "description" : "Read about Human Trafficking and Modern Day Slavery in the Guardian",
+                "dimensions" : {
+                    "left": "52.7%",
+                    "top": "18%",
+                    "width": "29%",
+                    "height": "3%",
+                    "rotate": "1deg"
+                }
+            },
+            {
+                "type" : "link-box",
+                "href" : "https://www.youtube.com/watch?v=xw-aaFPLOdw",
+                "icon" : "icons/video.png",
+                "icon-bg" : 0.4,
+                "description" : "Watch Al Jazeera's documentary on Nigerian girls trafficked into Europe.",
+                "dimensions" : {
+                    "left": "42.5%",
+                    "top": "33.5%",
+                    "width": "14.6%",
+                    "height": "17.5%",
+                    "rotate": "-2deg",
+                }
+            },
+            {
+                "type" : "link-box",
+                "href" : "http://www.bbc.com/news/magazine-35244148",
+                "icon" : "icons/video.png",
+                "icon-bg" : 0.4,
+                "youtube" : "UrX_GJ7WrHY",
+                "dimensions" : {
+                    "left": "2.7%",
+                    "top": "19.2%",
+                    "width": "34.3%",
+                    "height": "3.5%",
+                    "rotate": "-2deg"
+                }
+            }
+        ]
+    },
+    {
+        "url" : "http://positivenegatives.org/wp-content/uploads/2015/08/A01.jpg",
+        "elements" : [
+            {
+                "type" : "link-box",
+                "href" : "https://www.youtube.com/watch?v=xw-aaFPLOdw",
+                "icon" : "icons/video.png",
+                "icon-bg" : 0.4,
+                "description" : "Watch Al Jazeera's documentary on Nigerian girls trafficked into Europe.",
+                "dimensions" : {
+                    "left": "42.5%",
+                    "top": "33.5%",
+                    "width": "14.6%",
+                    "height": "17.5%",
+                    "rotate": "-2deg",
+                }
+            },
+        ]
+    },
+]
